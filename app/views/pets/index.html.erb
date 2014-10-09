@@ -1,0 +1,15 @@
+<h1>Pet#index</h1>
+
+<% @pets.each do |pet| %>
+  	<%= pet.name %>
+  	<%= pet.weight %>
+  	<%= pet.price %>
+  	<%= pet.animal.animal_type if pet.animal_id %>
+
+	  <%= link_to 'Edit', edit_pet_path(pet) %>
+	  <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are You sure?' } %><br />
+<% end %>
+
+<br>
+<%= link_to 'Add new pet', new_pet_path %>
+

@@ -1,0 +1,14 @@
+<h1>Users#index</h1>
+
+<% @users.each do |user| %>
+  	<%= user.name %>
+  	<%= user.email %>
+	<% if user.id == session[:user_id] %>
+	  	<%= link_to 'Edit', edit_user_path(user) %>
+	  	<%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+  	<br>
+<% end %>
+
+<br>
+<%= link_to 'Add new user', new_user_path %>

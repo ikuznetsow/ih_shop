@@ -1,0 +1,16 @@
+	<!-- errors.ispect -->
+<% if @animal.errors.any? %>
+	<div id="error_explanation" style="color:red;">
+		<% @animal.errors.full_messages.each do |message| %>
+			<%= message %> </br>
+		<% end %> 
+	</div>
+<% end %> 
+
+<%= form_for @animal do |f| %>
+		<%= f.label :animal_type %><%= f.text_field :animal_type %><br />
+		<%= f.label :average_weight %><%= f.number_field :average_weight %><br />
+		<%= f.label :max_in_store %><%= f.number_field :max_in_store %><br />
+		<%= f.submit %>
+<% end %>
+<br>

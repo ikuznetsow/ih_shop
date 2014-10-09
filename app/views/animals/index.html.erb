@@ -1,0 +1,13 @@
+<h1>Animals#index</h1>
+
+<% @animals.each do |animal| %>
+  	<%= animal.animal_type %>
+  	<%= animal.average_weight %>
+  	<%= animal.max_in_store %>
+
+	  <%= link_to 'Edit', edit_animal_path(animal) %>
+	  <%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are You sure?' } %><br />
+<% end %>
+
+<br>
+<%= link_to 'Add new animal', new_animal_path %>

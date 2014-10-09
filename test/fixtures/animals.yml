@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  animal_type: MyString
+  average_weight: 1
+  quantity_in_store: 1
+
+two:
+  animal_type: MyString
+  average_weight: 1
+  quantity_in_store: 1

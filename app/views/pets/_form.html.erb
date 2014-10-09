@@ -1,0 +1,19 @@
+	<!-- errors.ispect -->
+<% if @pet.errors.any? %>
+	<div id="error_explanation" style="color:red;">
+		<% @pet.errors.full_messages.each do |message| %>
+			<%= message %> </br>
+		<% end %> 
+	</div>
+<% end %> 
+
+<%= form_for @pet do |f| %>
+		<%= f.label :name %><%= f.text_field :name %><br />
+		<%= f.label :animal_id %>
+    <%= f.select :animal_id, Animal.all.collect { |a| [ a.animal_type, a.id ] }, include_blank: true %><br />
+		<%= f.label :weight %><%= f.number_field :weight %><br />
+		<%= f.label :price %><%= f.number_field :price %><br />
+
+		<%= f.submit %>
+<% end %>
+<br>
